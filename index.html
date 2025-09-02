@@ -1,53 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Investigating Friction</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investigating Friction</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-   <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#2C3E50',
-                        softgray: '#ECF0F1',
-                        teal: '#1ABC9C',
-                        gold: '#F1C40F',
-                        slate: '#7F8C8D',
-                        coral: '#E74C3C'
-                    },
-                    fontFamily: {
-                        montserrat: ['Montserrat', 'sans-serif'],
-                        inter: ['Inter', 'sans-serif'],
-                        lora: ['Lora', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <svg class="h-8 w-8 text-teal" viewBox="0 0 24 24">
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-flex">
+                <div class="nav-items">
+                    <div class="nav-logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24">
                           <circle cx="12" cy="12" r="2" fill="currentColor"/>
                           <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.8">
                             <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="10s" repeatCount="indefinite"/>
@@ -68,19 +36,19 @@
                             <animateTransform attributeName="transform" type="rotate" from="90 12 12" to="450 12 12" dur="20s" repeatCount="indefinite"/>
                           </circle>
                         </svg>
-                        <span class="ml-2 text-xl font-montserrat font-bold text-navy">Mr NL's Physics Lab</span>
+                        <span class="logo-text">Mr NL's Physics Lab</span>
                     </div>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-                    <a href="#" class="px-3 py-2 text-sm font-medium text-teal border-b-2 border-teal">Home</a>
-                    <a href="#igcse" class="px-3 py-2 text-sm font-medium text-slate hover:text-teal">IGCSE</a>
-                    <a href="#alevel" class="px-3 py-2 text-sm font-medium text-slate hover:text-teal">A Level</a>
-                    <a href="#about" class="px-3 py-2 text-sm font-medium text-slate hover:text-teal">About</a>
+                <div class="nav-menu">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#igcse" class="nav-link">IGCSE</a>
+                    <a href="#alevel" class="nav-link">A Level</a>
+                    <a href="#about" class="nav-link">About</a>
                 </div>
                
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-navy">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="mobile-menu-btn">
+                    <button id="mobile-menu-button">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -88,208 +56,196 @@
             </div>
         </div>
         
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 text-base font-medium text-teal">Home</a>
-                <a href="#igcse" class="block px-3 py-2 text-base font-medium text-slate hover:text-teal">IGCSE</a>
-                <a href="#alevel" class="block px-3 py-2 text-base font-medium text-slate hover:text-teal">A Level</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate hover:text-teal">About</a>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content">
+                <a href="#" class="mobile-nav-link">Home</a>
+                <a href="#igcse" class="mobile-nav-link">IGCSE</a>
+                <a href="#alevel" class="mobile-nav-link">A Level</a>
+                <a href="#about" class="mobile-nav-link">About</a>
             </div>
         </div>
     </nav>
 
-    
-    
-
-          <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="min-h-screen flex flex-col">
-        <header class=" text-navy p-4">
-            <h1 class="text-3xl font-bold text-center">Investigating Friction</h1>
-          <button class=" btn absolute  right-4   top-24 px-4 py-2 bg-gold text-white font-semibold rounded-lg  w-30  hover:bg-gold/90 shadow-smhover:shadow-md">
-      Quiz yourself!
-    </button>
-        </header>
-        
-        <main class="flex-grow p-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Simulation Area -->
-                    <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+    <main class="main-content">
+        <div class="page-container">
+            <header class="page-header">
+                <h1>Investigating Friction</h1>
+                <button class="quiz-btn">Quiz yourself!</button>
+            </header>
+            
+            <div class="content-area">
+                <div class="content-container">
+                    <div class="grid-layout">
+                        <!-- Simulation Area -->
+                        <div class="simulation-panel">
+                            <div class="experiment-area" id="experimentArea">
+                                <!-- Block with weights -->
+                                <div class="block-container" id="blockContainer">
+                                    <div id="weightsContainer" class="weights-container"></div>
+                                    <div class="block" id="block">
+                                        <div class="block-hook"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- String -->
+                                <div class="string" id="string"></div>
+                                
+                                <!-- Newton Meter -->
+                                <div class="newton-meter" id="newtonMeter">
+                                    <div class="meter-reading" id="meterReading"></div>
+                                    <div id="meterTicks"></div>
+                                    <div class="meter-scale">
+                                        <span>0</span>
+                                        <span>10</span>
+                                        <span>20</span>
+                                        <span>30</span>
+                                    </div>
+                                    <div class="hook"></div>
+                                </div>
+                                
+                                <!-- Surface -->
+                                <div class="surface" id="surface"></div>
+                            </div>
+                            
+                            <div class="button-container">
+                                <button id="resetBtn" class="control-btn reset-btn">
+                                    Reset Experiment
+                                </button>
+                            </div>
+                            
+                            <div class="instructions">
+                                <h3>Instructions:</h3>
+                                <ol>
+                                    <li>Select a surface type from the control panel</li>
+                                    <li>Add masses to increase the weight of the block</li>
+                                    <li>Click and drag the newtonmeter to pull the block</li>
+                                    <li>Notice how the force spikes initially (static friction) then drops (kinetic friction)</li>
+                                    <li>The kinetic friction force will be displayed in the control panel</li>
+                                    <li>Record your observations in the data table</li>
+                                    <li>Repeat three times for each surface and take an average</li>
+                                </ol>
+                            </div>
+                        </div>
                         
-                        
-                        <div class="relative h-[300px] border-b-2 border-gray-300 mb-6" id="experimentArea">
-                            <!-- Block with weights -->
-                            <div class="absolute" id="blockContainer" style="left: 500px; bottom: 30px;">
-                                <div id="weightsContainer" class="flex flex-col items-center"></div>
-                                <div class="block" id="block">
-                                    <div class="block-hook"></div>
+                        <!-- Control Panel -->
+                        <div class="control-panel">
+                            <div class="control-section">
+                                <h3>Surface Type:</h3>
+                                <div class="surface-grid">
+                                    <button class="surface-option" data-surface="wood" data-friction="0.3" data-static-ratio="1.2">
+                                        <div class="surface-preview surface-wood"></div>
+                                        <span>Wood</span>
+                                    </button>
+                                    <button class="surface-option" data-surface="ice" data-friction="0.05" data-static-ratio="1.1">
+                                        <div class="surface-preview surface-ice"></div>
+                                        <span>Ice</span>
+                                    </button>
+                                    <button class="surface-option" data-surface="carpet" data-friction="0.6" data-static-ratio="1.3">
+                                        <div class="surface-preview surface-carpet"></div>
+                                        <span>Carpet</span>
+                                    </button>
+                                    <button class="surface-option" data-surface="rubber" data-friction="0.8" data-static-ratio="1.4">
+                                        <div class="surface-preview surface-rubber"></div>
+                                        <span>Rubber</span>
+                                    </button>
                                 </div>
                             </div>
                             
-                            <!-- String -->
-                            <div class="string" id="string"></div>
-                            
-                            <!-- Newton Meter -->
-                            <div class="newton-meter absolute" id="newtonMeter" style="left: 300px; top: 190px;">
-                                <div class="meter-reading" id="meterReading"></div>
-                                <div id="meterTicks"></div>
-                                <div class="meter-scale">
-                                    <span>0</span>
-                                    <span>10</span>
-                                    <span>20</span>
-                                    <span>30</span>
+                            <!-- Mass Control -->
+                            <div class="control-section">
+                                <h3>Block Mass:</h3>
+                                <div class="mass-info">
+                                    <span>Base mass: 1.0 kg</span>
+                                    <span id="totalMass">Total: 1.0 kg</span>
                                 </div>
-                                <div class="hook"></div>
-                            </div>
-                            
-                            <!-- Surface -->
-                            <div class="surface w-full absolute bottom-0" id="surface"></div>
-                        </div>
-                        
-                        <div class="flex justify-center mb-4">
-                            <button id="resetBtn" class="btn bg-slate hover:bg-slate/90 text-white px-6 py-2 rounded-lg shadow-md">
-                                Reset Experiment
-                            </button>
-                        </div>
-                        
-                        <div class="bg-softgray p-4 rounded-lg">
-                            <h3 class="font-semibold mb-2">Instructions:</h3>
-                            <ol class="list-decimal pl-5 space-y-1">
-                                <li>Select a surface type from the control panel</li>
-                                <li>Add masses to increase the weight of the block</li>
-                                <li>Click and drag the newtonmeter to pull the block</li>
-                                <li>Notice how the force spikes initially (static friction) then drops (kinetic friction)</li>
-                                <li>The kinetic friction force will be displayed in the control panel</li>
-                                <li>Record your observations in the data table</li>
-                                <li>Repeat three times for each surface and take an average</li>
-                            </ol>
-                        </div>
-                    </div>
-                    
-                    <!-- Control Panel -->
-                    <div class="control-panel p-6">
-                       
-                        <div class="mb-6">
-                            <h3 class="font-medium mb-2">Surface Type:</h3>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button class="btn surface-option bg-gold/10 p-3 rounded-lg border-2 border-transparent hover:border-blue-500 flex flex-col items-center" data-surface="wood" data-friction="0.3" data-static-ratio="1.2">
-                                    <div class="w-16 h-6 surface-wood rounded mb-2"></div>
-                                    <span>Wood</span>
-                                </button>
-                                <button class="btn surface-option bg-gold/10 p-3 rounded-lg border-2 border-transparent hover:border-blue-500 flex flex-col items-center" data-surface="ice" data-friction="0.05" data-static-ratio="1.1">
-                                    <div class="w-16 h-6 surface-ice rounded mb-2"></div>
-                                    <span>Ice</span>
-                                </button>
-                                <button class="btn surface-option bg-gold/10 p-3 rounded-lg border-2 border-transparent hover:border-blue-500 flex flex-col items-center" data-surface="carpet" data-friction="0.6" data-static-ratio="1.3">
-                                    <div class="w-16 h-6 surface-carpet rounded mb-2"></div>
-                                    <span>Carpet</span>
-                                </button>
-                                <button class="btn surface-option bg-gold/10 p-3 rounded-lg border-2 border-transparent hover:border-blue-500 flex flex-col items-center" data-surface="rubber" data-friction="0.8" data-static-ratio="1.4">
-                                    <div class="w-16 h-6 surface-rubber rounded mb-2"></div>
-                                    <span>Rubber</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Mass Control -->
-                        <div class="mb-6">
-                            <h3 class="font-medium mb-2">Block Mass:</h3>
-                            <div class="flex items-center justify-between mb-2">
-                                <span>Base mass: 1.0 kg</span>
-                                <span id="totalMass">Total: 1.0 kg</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <button id="removeWeight" class="btn bg-coral hover:bg-coral/90 text-white px-3 py-2 rounded-lg shadow-md">
-                                    Remove mass
-                                </button>
-                                <button id="addWeight" class="btn bg-teal hover:bg-teal/90 text-white px-3 py-2 rounded-lg shadow-md">
-                                    Add mass (0.5 kg)
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Force Reading -->
-                        <div class="mb-6 bg-gray-100 p-4 rounded-lg">
-                            <h3 class="font-medium mb-2">Current Measurements:</h3>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <p class="text-sm text-gray-600">Applied Force:</p>
-                                    <p class="text-xl font-bold" id="forceDisplay">0.00 N</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Kinetic Friction:</p>
-                                    <p class="text-xl font-bold text-blue-600 force-value" id="kineticForceDisplay">0.00 N</p>
+                                <div class="mass-controls">
+                                    <button id="removeWeight" class="control-btn remove-btn">
+                                        Remove mass
+                                    </button>
+                                    <button id="addWeight" class="control-btn add-btn">
+                                        Add mass (0.5 kg)
+                                    </button>
                                 </div>
                             </div>
                             
-                        </div>
-                        
-                        <!-- Data Table -->
-                        <div>
-                            <h3 class="font-medium mb-2">Data Table:</h3>
-                            <div class="overflow-x-auto">
-                                <table class="w-full border-collapse">
-                                    <thead>
-                                        <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-3 py-2">Surface</th>
-                                            <th class="border border-gray-300 px-3 py-2">Mass (kg)</th>
-                                            <th class="border border-gray-300 px-3 py-2">Force (N)</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody id="dataTable">
-                                        <!-- Data rows will be added here -->
-                                    </tbody>
-                                </table>
+                            <!-- Force Reading -->
+                            <div class="measurements">
+                                <h3>Current Measurements:</h3>
+                                <div class="measurement-grid">
+                                    <div>
+                                        <p class="measurement-label">Applied Force:</p>
+                                        <p class="measurement-value" id="forceDisplay">0.00 N</p>
+                                    </div>
+                                    <div>
+                                        <p class="measurement-label">Kinetic Friction:</p>
+                                        <p class="measurement-value kinetic-value" id="kineticForceDisplay">0.00 N</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-3 flex justify-end">
-                                <button id="recordData" class="btn bg-teal hover:bg-teal/90 text-white px-4 py-2 rounded-lg shadow-md">
-                                    Record Data Point
-                                </button>
+                            
+                            <!-- Data Table -->
+                            <div class="data-section">
+                                <h3>Data Table:</h3>
+                                <div class="table-container">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Surface</th>
+                                                <th>Mass (kg)</th>
+                                                <th>Force (N)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="dataTable">
+                                            <!-- Data rows will be added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="record-btn-container">
+                                    <button id="recordData" class="control-btn record-btn">
+                                        Record Data Point
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
         
-       
-    </div>
-    
-    <!-- Toast notification -->
-    <div id="toast" class="toast">Data point recorded!</div>
+        <!-- Toast notification -->
+        <div id="toast" class="toast">Data point recorded!</div>
+        
+        <!-- Initialization guard -->
+        <div class="initialized" id="initializationGuard"></div>
+    </main>
 
-    <script src="script.js"></script>
-</main>
-
-
-    <footer class="bg-navy text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
                 <div>
-                    <div class="flex items-center">
-                        <svg class="h-8 w-8 text-teal" viewBox="0 0 24 24">
+                    <div class="footer-logo">
+                        <svg class="footer-icon" viewBox="0 0 24 24">
                             <!-- Footer logo SVG -->
                         </svg>
-                        <span class="ml-2 text-xl font-montserrat font-bold">Mr NL's Physics Lab</span>
+                        <span class="footer-logo-text">Mr NL's Physics Lab</span>
                     </div>
-                    <p class="mt-4 text-softgray">
+                    <p class="footer-description">
                         Making physics interactive, engaging, and accessible for all students.
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-montserrat font-semibold">Quick Links</h3>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="text-softgray hover:text-teal">Home</a></li>
-                        <li><a href="#igcse" class="text-softgray hover:text-teal">IGCSE Simulations</a></li>
-                        <li><a href="#alevel" class="text-softgray hover:text-teal">A Level Simulations</a></li>
-                        <li><a href="#about" class="text-softgray hover:text-teal">About</a></li>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#igcse">IGCSE Simulations</a></li>
+                        <li><a href="#alevel">A Level Simulations</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 border-t border-navy-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-softgray">© 2025 Mr NL's Physics Lab. All rights reserved.</p>
-                <div class="mt-4 md:mt-0 flex space-x-6">
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Mr NL's Physics Lab. All rights reserved.</p>
+                <div class="social-links">
                     <!-- Social media icons -->
                 </div>
             </div>
@@ -297,10 +253,5 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
 </body>
 </html>
