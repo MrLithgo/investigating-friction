@@ -1,0 +1,227 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ECF0F1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Custom colors */
+.bg-navy {
+    background-color: #2C3E50;
+}
+
+.bg-softgray {
+    background-color: #ECF0F1;
+}
+
+.bg-teal {
+    background-color: #1ABC9C;
+}
+
+.bg-gold {
+    background-color: #F1C40F;
+}
+
+.text-slate {
+    color: #7F8C8D;
+}
+
+.text-coral {
+    color: #E74C3C;
+}
+
+/* Font families */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-lora {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+main {
+  font-family: 'Montserrat', sans-serif;
+  
+  padding: var(--space-lg);
+  background-color: var(--softgray);
+  color: var(--navy);
+  line-height: 1.5;
+  align-items: center;
+}
+
+
+
+.newton-meter {
+    position: relative;
+    width: 195px;
+    height: 60px;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    border-radius: 10px;
+    border: 3px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: grab;
+}
+
+.newton-meter.dragging {
+    cursor: grabbing;
+}
+
+.meter-reading {
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background-color: #ff3333;
+    top: 10px;
+    transition: left 0.1s ease;
+}
+
+.meter-scale {
+  font-family: 'Montserrat', sans-serif;
+  
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.meter-tick {
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background-color: #333;
+    bottom: 20px;
+}
+
+.meter-tick.major {
+    height: 16px;
+    width: 2px;
+}
+
+.block {
+    width: 100px;
+    height: 60px;
+    background-color: #8B4513;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.weight {
+    width: 80px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.surface {
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.string {
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    transform-origin: left center;
+}
+
+.control-panel {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.surface-wood {
+    background: linear-gradient(90deg, #a87b51 0%, #c19a6b 50%, #a87b51 100%);
+}
+
+.surface-ice {
+    background: linear-gradient(90deg, #a5f4f7 0%, #dcf7f9 50%, #a5f4f7 100%);
+}
+
+.surface-carpet {
+    background: linear-gradient(90deg, #5a7247 0%, #7a9267 50%, #5a7247 100%);
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px);
+}
+
+.surface-rubber {
+    background: linear-gradient(90deg, #444 0%, #666 50%, #444 100%);
+}
+
+.hook {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    border-right: 3px solid #333;
+    border-bottom: 3px solid #333;
+    border-top: 3px solid #333;
+    border-radius: 0 0 5px 0;
+    right: -10px;
+    top: 30px;
+}
+
+.block-hook {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    border-left: 3px solid #333;
+    border-bottom: 3px solid #333;
+    border-top: 3px solid #333;
+    border-radius: 0 0 0 5px;
+    left: -10px;
+    top: 20px;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+.force-value {
+    transition: all 0.3s ease;
+}
+
+.force-value.highlight {
+    color: #ff3333;
+    transform: scale(1.05);
+}
